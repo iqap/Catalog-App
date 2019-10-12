@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content2 %}
+
+<div class="col-lg-9 items-list">
+	<div class="card mt-4">
+		<div class="card-body">
+
+			<h3 class="card-title">Latest Items</h3>
+
+		</div>
+		<hr>
+		{% for item in items %}
+		<div class="card-body">
+			<a href="{{url_for('viewCategoryItem', category_name = item.category.name, item_name = item.name)}}">
+				<h4 class="card-title">{{item.name}}</h4>
+			</a>
+		</div>
+		<hr>
+		{% endfor %}
+
+	</div>
+</div>
+
+{% endblock %}
